@@ -1,7 +1,83 @@
 html, body{
     margin: 0;
+    background-image: linear-gradient(to top, #bbd2c5, #536976, #292e49);;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    padding-top: 5%;
+}
+
+header > h1 {
+    text-align: center;
+    color: #90e0ef;
+    font-family: sans-serif;
+    text-shadow: 5px 5px 15px #90e0ef,
+                 5px -5px 10px #e7183a,
+                 -5px -5px 15px #e7183a,
+                 -5px 5px 15px #e7183a;
+    animation: blink-animation 1s steps(5, start) infinite;         
 }
 
 .container{
-    display: flex;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas: 
+    "input button"
+    "songRange songRange"
+    "video video"
+    "lyrics lyrics";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
 }
+
+input {
+    grid-area: input;
+    height: 30px;
+    border-radius: 10px;
+}
+
+
+button {
+    grid-area: button;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#songRange{
+    grid-area: songRange;
+}
+
+#video {
+    grid-area: video;
+}
+
+#lyrics {
+    grid-area: lyrics;
+}
+
+button:hover {
+    background-color: blue;
+    color: white
+}
+
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
